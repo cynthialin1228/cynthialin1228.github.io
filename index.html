@@ -109,8 +109,8 @@ footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--rule);color:v
     <div class="head"><h3>Needle: CUDA &amp; CPU Array Backends</h3><span class="date">Oct. 2026</span></div>
     <div class="where">CMU 10-714 Deep Learning Systems</div>
     <ul>
-      <li>Implemented the CUDA backend of the N-D array library behind a from-scratch deep learning framework: strided compact/setitem kernels, 14 element-wise and scalar operators generated from kernel macros, and max/sum reductions, bound to Python with pybind11.</li>
-      <li>Wrote a shared-memory tiled matmul kernel: each 16×16 thread block cooperatively stages tiles of both operands and zero-pads the edges, so any M×N×P shape works. It reaches 669 GFLOP/s on 4096×4096 FP32 matrices, 6.1× faster than NumPy on the host CPU, with relative error under 3×10⁻⁶.</li>
+      <li>Implemented the CUDA backend of the N-D array library behind a from-scratch deep learning framework: strided compact/setitem kernels, 14 element-wise and scalar operators generated from kernel macros, and max/sum reductions, bound to Python with pybind11 and passing the full CPU and CUDA test suite.</li>
+      <li>Wrote a shared-memory tiled matmul kernel: each 16×16 thread block cooperatively stages tiles of both operands and zero-pads the edges, so any M×N×P shape works. It reaches 669 GFLOP/s on 4096×4096 FP32 matrices on an NVIDIA T4, 6.1× faster than NumPy on the host CPU, with relative error under 3×10⁻⁶.</li>
     </ul>
     <div class="stack">CUDA · C++ · pybind11 · Python</div>
   </div>
