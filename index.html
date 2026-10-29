@@ -106,6 +106,16 @@ footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--rule);color:v
   </div>
 
   <div class="entry">
+    <div class="head"><h3>Needle: CUDA &amp; CPU Array Backends</h3><span class="date">Oct. 2026</span></div>
+    <div class="where">CMU 10-714 Deep Learning Systems</div>
+    <ul>
+      <li>Implemented the CUDA backend of the N-D array library behind a from-scratch deep learning framework: strided compact/setitem kernels, 14 element-wise and scalar operators generated from kernel macros, and max/sum reductions, bound to Python with pybind11.</li>
+      <li>Wrote a shared-memory tiled matmul kernel: each 16×16 thread block cooperatively stages tiles of both operands and zero-pads the edges, so any M×N×P shape works. Also wrote a block-tiled CPU matmul in C++ over an 8×8 tiled layout.</li>
+    </ul>
+    <div class="stack">CUDA · C++ · pybind11 · Python</div>
+  </div>
+
+  <div class="entry">
     <div class="head"><h3>Parallel &amp; Cache-Blocked N-D Tensor Reorder</h3><span class="date">Oct. 2026</span></div>
     <div class="where">CMU 18-647 Computational Problem Solving</div>
     <ul>
@@ -194,7 +204,7 @@ footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--rule);color:v
 <section id="skills">
   <h2>Skills</h2>
   <dl>
-    <dt>Performance</dt><dd>AVX2/FMA SIMD, OpenMP, cache blocking, perf, x86-64 assembly</dd>
+    <dt>Performance</dt><dd>AVX2/FMA SIMD, CUDA, OpenMP, cache blocking, perf, x86-64 assembly</dd>
     <dt>Hardware</dt><dd>SystemVerilog, Verilog, Cadence Genus/Innovus, Synopsys DC, VCS, gem5</dd>
     <dt>ML &amp; tools</dt><dd>Python, PyTorch, C/C++, Docker, Linux, Git</dd>
   </dl>
